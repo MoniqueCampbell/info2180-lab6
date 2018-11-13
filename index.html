@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Web Dictionary</title>
+	</head>
+<body>
+
+	<button id="demo" onclick="myFunction()">Search</button>
+	<script>
+	document.getElementById("demo").onclick = function() {myFunction()};
+	function myFunction() {
+		let xhr = new XMLHttpRequest;
+	    //Call the open function, GET-type of request, url, true-asynchronous
+	    xhr.open('GET', 'request.php?q=definition', true)
+	    //call the onload 
+	    xhr.onload = function(){
+	        //check if the status is 200(means everything is okay)
+	        if (this.status === 200){
+	            //return server response as an object with JSON.parse
+	            alert(xhr.responseText);
+	            //var dis=JSON.parse(this.responseText);
+	            //document.getElementById("demo").innerHTML=dis[0];
+	            //alert(dis);
+	        }else{
+	        	alert("There was a problem with your request");
+	        }
+	    }
+    	//call send
+    	xhr.send();
+	}
+	</script>
+</body>
+</html>
