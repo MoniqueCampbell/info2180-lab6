@@ -1,4 +1,3 @@
-<!--The fixed correct Exercise 3 version-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +8,7 @@
 	<div class="header">
   		<h1>Web Dictionary</h1>
 	<div class="column">
-	<p>Look up the definition of a word (eg: ajax, html, bar, php. javascript or php)</p>
+	<p>Look up the definition of a word (eg: ajax, html, bar, php, css, javascript or definition)</p>
 	<input type="text" id="search" placeholder="ajax"><button onclick="myFunction()">Search</button><button onclick="Function()">Get All Definitions</button>
 	<p><strong>Result(s) will display below</strong></p>
 	<div id="result"></div>
@@ -45,6 +44,21 @@
 	    }
     	//call send
     	xhr.send();
+	}
+	
+	function myFunction() {
+		let xhr2 = new XMLHttpRequest;
+		xhr2.open('GET', 'request.php?q=&all=true', true);
+		xhr2.onload = function(){
+       	//check if the status is 200(means everything is okay)
+        	if (this.status === 200){
+            	var mkk=xhr2.responseText;
+        	}else{
+        		alert("There is a problem with your request");
+        	}
+		}
+		//call send
+		xhr2.send();
 	}
 	</script>
 </body>
