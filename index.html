@@ -1,6 +1,6 @@
-<!--The correct Exercise 3 version-->
+<!--The fixed correct Exercise 3 version-->
 <!DOCTYPE html>
-<html
+<html>
 	<head>
 		<title>Web Dictionary</title>
 		<link href="webdictionary.css" type="text/css" rel="stylesheet">
@@ -19,9 +19,9 @@
 		let xhr = new XMLHttpRequest;
 	    //Call the open function, GET-type of request, url, true-asynchronous
 	    switch(ans){
-		    case "definition": xhr.open('GET', 'request.php?q=definition', true);
+	    	case "bar": xhr.open('GET', 'request.php?q=bar', true);
 		    break;
-		    case "bar": xhr.open('GET', 'request.php?q=bar', true);
+		    case "definition": xhr.open('GET', 'request.php?q=definition', true);
 		    break;
 		    case "ajax": xhr.open('GET', 'request.php?q=ajax', true);
 		    break;
@@ -38,12 +38,9 @@
 	    xhr.onload = function(){
 	        //check if the status is 200(means everything is okay)
 	        if (this.status === 200){
-	            //return server response as an object with JSON.parse
-	            //alert(xhr.responseText.innerHTML);
-	            //var dis=JSON.parse(this.responseText);
 	            document.getElementById("result").innerHTML=xhr.responseText;
 	        }else{
-	        	alert("There was a problem with your request");
+	        	alert("There is a problem with your request");
 	        }
 	    }
     	//call send
