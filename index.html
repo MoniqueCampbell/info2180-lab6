@@ -12,33 +12,27 @@
 	<p>Look up the definition of a word (eg: ajax, html, bar, php. javascript or php)</p>
 	<input type="text" id="search" placeholder="ajax"><button onclick="myFunction()">Search</button><button onclick="Function()">Get All Definitions</button>
 	<p><strong>Result(s) will display below</strong></p>
-	<!--<?php-->
-	<!--if(isset($_POST['searcher']){-->
-	<!--$searcher=$_POST['searcher']}-->
-	<!--?>-->
 	<div id="result"></div>
 	<script>
-	//document.getElementById("demo").onclick = function() {myFunction()};
-	//<strong>RESULT</strong>
 	function myFunction() {
 		var ans = document.getElementById("search").value;
 		let xhr = new XMLHttpRequest;
 	    //Call the open function, GET-type of request, url, true-asynchronous
 	    switch(ans){
-	    case "definition": xhr.open('GET', 'request.php?q=definition', true);
-	    break;
-	    case "bar": xhr.open('GET', 'request.php?q=bar', true);
-	    break;
-	    case "ajax": xhr.open('GET', 'request.php?q=ajax', true);
-	    break;
-	    case "html": xhr.open('GET', 'request.php?q=html', true);
-	    break;
-	    case "css": xhr.open('GET', 'request.php?q=css', true);
-	    break;
-	    case "javascript": xhr.open('GET', 'request.php?q=javascript', true);
-	    break;
-	    case "php": xhr.open('GET', 'request.php?q=php', true);
-	    break;
+		    case "definition": xhr.open('GET', 'request.php?q=definition', true);
+		    break;
+		    case "bar": xhr.open('GET', 'request.php?q=bar', true);
+		    break;
+		    case "ajax": xhr.open('GET', 'request.php?q=ajax', true);
+		    break;
+		    case "html": xhr.open('GET', 'request.php?q=html', true);
+		    break;
+		    case "css": xhr.open('GET', 'request.php?q=css', true);
+		    break;
+		    case "javascript": xhr.open('GET', 'request.php?q=javascript', true);
+		    break;
+		    case "php": xhr.open('GET', 'request.php?q=php', true);
+		    break;
 	    }
 	    //call the onload 
 	    xhr.onload = function(){
@@ -48,16 +42,12 @@
 	            //alert(xhr.responseText.innerHTML);
 	            //var dis=JSON.parse(this.responseText);
 	            document.getElementById("result").innerHTML=xhr.responseText;
-	            //alert(dis);
-	            //document.getElementById("result").innerHTML = xhr.responseText;
-
 	        }else{
 	        	alert("There was a problem with your request");
 	        }
 	    }
     	//call send
     	xhr.send();
-    	function Function() {}
 	}
 	</script>
 </body>
